@@ -11,26 +11,40 @@
 <body background="images/bg.jpg">
     <div class="topnav">
         <div class="nohover">
-            <a href="/my-diary/index.html"><h2 >My Diary</h2></a>
+            <a href="home.html"><h2 >My Diary</h2></a>
         </div>
-        <a href="/my-diary/index.html">Home</a>
+        <a href="home.html">Home</a>
         <a href="add_entry.html">Add Entry</a>
         <div class="topnav-right">
             <a href="profile.html">Profile</a>
-            <a href="login.html">Login</a>
-            <a href="signup.html">Sign UP</a>
+            <a href="/my-diary/home.html">Logout</a>
+          
         </div>
     </div>
-    <div class="entries" >
-        <h1 >Your profile</h1>
-        <div>
-            <p contenteditable="true">Username: Miriam</p> 
-            <p contenteditable="true">Email: something@gmail.com</p>
-            <a href="#change_password.html">Change password</a>
-            <form class="text">
-                <button style="padding: 5px 20px;"type="submit" >save</button>
-            </form>    
-        </div>      
-    </div>      
+    <h1 class="entries">Your profile</h1>
+    <table>
+        <tbody>         
+            <tr>
+                <td><p><strong>Username:</strong>Miriam</p></td>
+                <td><a href="#"class="text" style="color:blue"> set a reminder </a></td> 
+            </tr>
+            <tr>
+                <td><p ><strong>Email:</strong>miriam@gmail.com</p></td>
+            </tr>
+            <tr>
+                <td><a href="#change_password.html"style="color:blue">Change password</a> </td>
+            </tr>
+            <tr>
+                <td>
+                    <form action="#">
+                        <button style="padding: 5px 20px;"type="submit" >edit profile</button>
+                    </form>
+                </td>
+
+            </tr>
+            
+            
+        </tbody>
+    </table>
 </body>
 </html>

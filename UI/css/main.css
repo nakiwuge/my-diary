@@ -10,7 +10,7 @@ body {margin:0;
     margin-right: auto;
     width: 50%;
     border-radius: 5px;
-  
+    
     padding: 20px;
     
    
@@ -86,34 +86,49 @@ a{
     display: inline;
 
 }
+
 .entries {
+    margin-top: 5%;
     margin-left: 25%;
     margin-right:25%;
-    width: 100%;
+    width: 50%;
+    
   
 }
-.entries a{
+
+
+
+table {
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right:25%;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    
+
+}
+table a{
     display: block;
     align-items: center;
     color :rgb(37, 36, 36);
 }
-.entries a:hover {
+table a:hover {
     background: transparent;
     color: rgb(55, 99, 194);
   }
-
-table {
-    
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 60%;
-    
-
-}
 
 
 td, th {
     border: 0px;
     text-align: left;
     padding: 8px;
+}
+#welcome_text{
+    color:rgb(3, 49, 49); 
+    background-color:rgba(233, 233, 233, 0.377);
+    text-align: center;
+    font-family:Courier;
+
+
 }
