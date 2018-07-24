@@ -3,82 +3,32 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="UI/css/main.css" />
-    
+    <script src="js/main.js"></script>
 </head>
-<body background="UI/images/bg.jpg">
-    <div class="topnav">
-        <div class="nohover">
-            <a href="/my-diary/index.html"><h2 >My Diary</h2></a>
-        </div>
-        <a href="/my-diary/index.html">Home</a>
-        <a href="UI/add_entry.html">Add Entry</a>
-        <div class="topnav-right">
-            <a href="UI/profile.html">Profile</a>
-            <a href="UI/login.html">Login</a>
-            <a href="UI/signup.html">Sign UP</a>
-        </div>
-    </div>
-    <div >
-        <h1 class="entries">My Entries</h1>
-        <div class="entries">
-            <table>
-                <tbody>         
-                    <tr>
-                        <td><a href="UI/content.html">My first entry</a> </td>
-                        <td>
-                            <form action="UI/content.html">
-                                <button style="padding: 5px 20px;"type="submit" >edit</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="#">
-                                <button style="padding: 5px 20px; background-color:red;" type="submit" >delete</button>
-                            </form>
-                        </td>
-                        </tr>
-                        <td><a href="UI/content.html">My second entry</a> </td>
-                        <td>
-                            <form action="UI/content.html">
-                                <button style="padding: 5px 20px;"type="submit" >edit</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="#">
-                                <button style="padding: 5px 20px; background-color:red;" type="submit" >delete</button>
-                            </form>
-                        </td>
-                        </tr>
-                        <td><a href="UI/content.html">My third entry</a> </td>
-                        <td>
-                            <form action="UI/content.html">
-                                <button style="padding: 5px 20px;"type="submit" >edit</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="#">
-                                <button style="padding: 5px 20px; background-color:red;" type="submit" >delete</button>
-                            </form>
-                        </td>
-                        </tr>
-                        <td><a href="UI/content.html">My fourth entry</a> </td>
-                        <td>
-                            <form action="UI/content.html">
-                                <button style="padding: 5px 20px;"type="submit" >edit</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="#">
-                                <button style="padding: 5px 20px; background-color:red;" type="submit" >delete</button>
-                            </form>
-                        </td>
-                        </tr>   
-                 </tbody>
-            </table>    
-        </div>      
-    </div> 
-        
+<body>
+
+    <div class="container ">
+         <form > 
+            <h1 id='welcome_text'>Welcome to My Diary</h1> 
+            
+            <h3>Please login with your account details</h3>
+            <hr>
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" required>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <hr>   
+        </form>
+        <form action="UI/home.html">
+            <button type="submit">Login</button>
+            <a href="#forgot_password.html">Forgot password?</a>
+            <div>
+                <p class="text info-text" >New user? </p><a href="UI/signup.html"class="info-text" id="signup-bg"><strong>SignUp here</strong> </a>
+           </div>
+        </form>  
+    </div>   
 </body>
 </html>
