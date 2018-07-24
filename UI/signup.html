@@ -16,19 +16,19 @@
             <p>Please fill in this form to create an account.</p>
             <hr>
             <label for="name"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" >
+            <input type="email" placeholder="Enter Username" name="username" required>
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" >
+            <input type="text" placeholder="Enter Email" name="email" required>
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" >
+            <input type="password" placeholder="Enter Password" name="psw" required>
             <label for="conf-psw"><b>Confirm Password</b></label>
-            <input type="password" placeholder="Confirm Password" name="con-psw" >
+            <input type="password" placeholder="Confirm Password" name="con-psw" required>
             <hr>   
         </form>
         <form action="/my-diary/index.html">
             <button type="submit" >Sign Up</button>
             <div>
-                <p class="text" style="color:rgba(34, 34, 199, 0.664)">Already have an account? </p><a href="/my-diary/index.html">login here</a>
+                <p class="text info-text" >Already have an account? </p><a href="/my-diary/index.html">login here</a>
             </div>
         </form>  
     </div>   

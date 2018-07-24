@@ -2,6 +2,7 @@ body {margin:0;
     background-color: rgb(211, 205, 205);
     position: relative;
     padding-bottom: 9rem;
+    background-image: url("../images/bg.jpg")
     
 }
 .container{
@@ -34,10 +35,24 @@ button[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
+.button-small[type=submit]{
+    padding: 5px 20px;
+}
 button[type=submit]:hover {
     background-color:#4168f4;
 }
+.button-danger[type=submit]{
+    padding: 5px 20px;
+    background-color:red;
+}
 input[type=password] {
+    display:block;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=email] {
     display:block;
     width: 100%;
     padding: 12px 20px;
@@ -130,5 +145,15 @@ td, th {
     text-align: center;
     font-family:Courier;
 
+
+}
+.info-text{
+   color:rgba(34, 34, 199, 0.664);
+}
+#signup-bg{
+    background-color:rgba(233, 233, 233, 0.377);
+}
+textarea{
+    height:200px;
 
 }
