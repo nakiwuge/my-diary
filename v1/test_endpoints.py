@@ -1,29 +1,42 @@
 from v1 import app
 import unittest
-import json
 
 class FlaskTestCase(unittest.TestCase):
     def setUp(self):
-        self.tester = app.test_client(self)
-        self.data=  {"id":"1","content":"i learnt thow to make templates","date":"25-july-2018","title": "templating"}
-     
-    #test get all erntries end point  
-    def test_get_all_enteries(self):
+        self.tester = app.test_client(self) 
+        self.data ={"id":"3","title":"add","content":"content", "date":"date"} 
+
+    #testing get entries url 
+    def test_get_all_enteries_url_with_data(self):
         response = self.tester.get('/api/v1/entries', data=self.data)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(self.data, response.data)
+    def test_get_all_enteries_urla(self):
+        response = self.tester.get('/api/v1/entries')
+        self.assertEqual(response.status_code, 404)
+        self.assertIn(b"no entries added, please add an entry", response.data)
 
-     
-    #test post entry end point 
-    def test_post_entery(self):
-        response = self.tester.post('/api/v1/entries',data=self.data)
-        self.assertEqual(response.status_code, 200)
+    #testing post entries url
+    def test_post_enrty(self):
+        response = self.tester.post('/api/v1/entries')
+        if response.data==self.data:
+            self.assertEqual(response.status_code, 200)
+        
+    #test if invalid key error is returned 
+    def test_invalid_entry_post(self):
+        response = self.tester.post('/api/v1/entries')
+        if response.data=="":
+            self.assertIn(b"key should either be id ,content ,date and title", response.data)
 
-
-    #test get entry_id end point
-    def test_get_entry_id(self):
-        response = self.tester.get('/api/v1/entries/1',data=self.data)
-        self.assertEqual(response.status_code, 200)
- 
+    #test if database is empty error exists
+    def test_for_no_entries_error_for_entryid(self):
+        response = self.tester.get('/api/v1/entries/entryid')
+        if response.data=="":
+           self.assertEqual(response.status_code, 200)
+    #test if invalid id error exists
+    def test_for_put_method(self):
+        response = self.tester.put('/api/v1/entries/entryid')
+        if response.data=="":
+           self.assertEqual(response.status_code, 200)
        
         
 
