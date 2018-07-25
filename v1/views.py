@@ -1,5 +1,6 @@
 from flask import Flask,jsonify,request
 from v1 import app
+import json
 
 all_entries = []
 
@@ -19,18 +20,35 @@ def entries():
               
     else:
         #getting an entry
-        add_entry = request.get_json() 
+        add_entry = request.get_json()
+        for key in add_entry:
+            #check if user is not using the required keys
+            if key not in ["id","content","date","title"]:
+                return "key should either be id ,content ,date and title"
+            
         all_entries.append(add_entry)
         return jsonify(all_entries)
-       
+      
 @app.route('/api/v1/entries/<string:entry_id>' , methods=['GET','PUT'])
 def content(entry_id):
+    #get entry by id
     if request.method == 'GET':
-        #get_content=[x for x in all_entries  if x.values() == entry_id] 
-        get_content=[x for x in all_entries for y,z in x.items()if z == entry_id]
+        #check if all_entries is empty
+        if not all_entries:
+            return "no entries added , please add an entry"
+        #check if id entered is in the data base
+        for entry in all_entries:
+                if entry_id!=entry["id"]:
+                    return "the is no entry with that the provided id"
+    
+        get_content =[entry for entry in all_entries if entry['id']==entry_id]
         return jsonify(get_content[0])
 
     else:
-        get_content=[x for x in all_entries for y,z in x.items()if z == entry_id] 
-        get_content[0]=request.get_json()
+        #modify entry by id
+        get_content =[entry for entry in all_entries if entry['id']==entry_id]
+        get_content[0]['title']=request.json['title']
+        get_content[0]['content']=request.json['content']
+        get_content[0]['date']=request.json['date']
+
         return jsonify(get_content[0])
