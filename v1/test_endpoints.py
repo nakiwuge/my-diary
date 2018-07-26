@@ -41,7 +41,7 @@ class FlaskTestCase(unittest.TestCase):
     
     #testing if the value entered is empty
     def test_for_error_returned_when_empty_values(self):
-        dummy_data=json.dumps({
+        test_data=json.dumps({
             'id':'3',
             'title':'', 
             'content':'',
@@ -49,7 +49,7 @@ class FlaskTestCase(unittest.TestCase):
             })
         response= self.tester.post(
             '/api/v1/entries', 
-            data=dummy_data,
+            data=test_data,
             content_type='application/json'
             )
         self.assertEqual(response.status_code, 403)
@@ -73,7 +73,7 @@ class FlaskTestCase(unittest.TestCase):
         
     #taste if pu method is succesful
     def test_for_success__on_update(self ):
-        dummy_data=json.dumps({
+        new_data=json.dumps({
             'id':'3',
             'title':'new title', 
             'content':'content stuff',
@@ -86,7 +86,7 @@ class FlaskTestCase(unittest.TestCase):
             )
         self.tester.put(
             '/api/v1/entries/3',
-            data=dummy_data,
+            data=new_data,
             content_type='application/json'
             )
         response = self.tester.get('/api/v1/entries/3')
