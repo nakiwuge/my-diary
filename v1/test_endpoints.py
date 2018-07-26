@@ -59,7 +59,7 @@ class EntryTestCase(unittest.TestCase):
             content_type='application/json'
             )
         self.assertEqual(response.status_code, 403)
-        self.assertIn(b"one or more of your key values are empty.please check and try again", response.data)
+        self.assertIn(b"one or more of your key values are empty. please check and try again", response.data)
 
     '''testing if specified entry is not in the database'''
     def test_for_error_for_no_specified_entry(self):
