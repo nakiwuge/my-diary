@@ -2,7 +2,7 @@ from v1 import app
 import unittest
 import json
 
-class FlaskTestCase(unittest.TestCase):
+class EntryTestCase(unittest.TestCase):
     def setUp(self):
         self.tester = app.test_client(self) 
         self.data=json.dumps({'id':'3','title':'this', 'content':'this content','date':'5-6-8'})
