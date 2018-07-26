@@ -3,11 +3,6 @@ from v1 import app
 import json
 
 all_entries = []
-
-@app.route('/' )
-def home():
-    return "<h1>welcome to my diary<h1>"         
-
   
 @app.route('/api/v1/entries' , methods=['GET','POST'])
 def entries():
