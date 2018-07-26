@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.com/zellymiriam/my-diary.svg?branch=api)](https://travis-ci.com/zellymiriam/my-diary)
 
+[![Coverage Status](https://coveralls.io/repos/github/zellymiriam/my-diary/badge.svg?branch=api)](https://coveralls.io/github/zellymiriam/my-diary?branch=api)
+
 MyDiary is an online journal where users can pen down their thoughts and feelings.
 
 #Getting Started
