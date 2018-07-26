@@ -1,4 +1,7 @@
 # my-diary
+
+[![Build Status](https://travis-ci.com/zellymiriam/my-diary.svg?branch=api)](https://travis-ci.com/zellymiriam/my-diary)
+
 MyDiary is an online journal where users can pen down their thoughts and feelings.
 
 #Getting Started
