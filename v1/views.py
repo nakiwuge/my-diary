@@ -11,20 +11,20 @@ def entries():
     if request.method == 'GET':
         '''check if all_entries is empty'''
         if len(all_entries) == 0:
-            return "no entries added, please add an entry", 404
+            return jsonify("no entries added, please add an entry"), 404
         return jsonify(all_entries), 200           
     else:
         '''post an entry'''
         add_entry = request.get_json()
         for key in add_entry:
             '''check if user is not using the required keys'''
-            keys = ["id", "content", "date", "title"]
+            keys = ["id","content", "date", "title"]
             if key not in keys:
-                return "key should either be id ,content ,date and title", 403 
+                return jsonify("key should be id ,content ,date and title"), 403 
         '''check for empty values'''
         for key in add_entry:
             if add_entry[key] == "":
-                return "one or more of your key values are empty.please check and try again", 403
+                return jsonify("one or more of your key values are empty.please check and try again"), 403
 
         all_entries.append(add_entry)
         return jsonify(all_entries), 200
@@ -36,7 +36,7 @@ def content(entry_id):
     if request.method == 'GET':
         '''check if all_entries is empty'''
         if len(all_entries) == 0:
-            return "no entries added, please add an entry", 404
+            return jsonify("no entries added, please add an entry"), 404
         get_content = [entry for entry in all_entries if entry['id'] == entry_id]
         return jsonify(get_content[0])
     else:
