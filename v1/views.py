@@ -24,7 +24,7 @@ def entries():
         '''check for empty values'''
         for key in add_entry:
             if add_entry[key] == "":
-                return jsonify("one or more of your key values are empty.please check and try again"), 403
+                return jsonify("one or more of your key values are empty. please check and try again"), 403
 
         all_entries.append(add_entry)
         return jsonify(all_entries), 200
