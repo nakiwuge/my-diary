@@ -4,6 +4,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/zellymiriam/my-diary/badge.svg?branch=api)](https://coveralls.io/github/zellymiriam/my-diary?branch=api)
 
+<a href="https://codeclimate.com/github/zellymiriam/my-diary/maintainability"><img src="https://api.codeclimate.com/v1/badges/71070b4031233717f1e3/maintainability" /></a>
+
 MyDiary is an online journal where users can pen down their thoughts and feelings.
 
 #Getting Started
