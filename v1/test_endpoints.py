@@ -38,6 +38,22 @@ class FlaskTestCase(unittest.TestCase):
             )
         self.assertEqual(response.status_code, 403)
         self.assertIn(b"key should either be id ,content ,date and title", response.data)
+    
+    #testing if the value entered is empty
+    def test_for_error_returned_when_empty_values(self):
+        dummy_data=json.dumps({
+            'id':'3',
+            'title':'', 
+            'content':'',
+            'date':'5-6-8'
+            })
+        response= self.tester.post(
+            '/api/v1/entries', 
+            data=dummy_data,
+            content_type='application/json'
+            )
+        self.assertEqual(response.status_code, 403)
+        self.assertIn(b"one or more of your key values are empty. please check and try again", response.data)
 
     #testing if specified entry is not in the database
     def test_for_error_for_no_specified_entry(self):
