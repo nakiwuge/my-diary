@@ -22,8 +22,14 @@ def entries():
         add_entry = request.get_json()
         for key in add_entry:
             #check if user is not using the required keys
-            if key not in ["id","content","date","title"]:
-                return "key should either be id ,content ,date and title",403    
+            keys=["id","content","date","title"]
+            if key not in  keys :
+                return "key should either be id ,content ,date and title",403 
+        #check for empty values
+        for key in add_entry:
+            if add_entry[key]=="":
+                 return "one or more of your key values are empty. please check and try again",403
+
         all_entries.append(add_entry)
         return jsonify(all_entries),200
       
