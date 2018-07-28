@@ -29,6 +29,7 @@ MyDiary is an online journal where users can pen down their thoughts and feeling
 
 - check requiremnets file for deployment process
 
+
 #Authors
 
 - Miriam Nakiwuge 
